@@ -8,7 +8,7 @@ import javax.swing.JOptionPane;
  * @author CUSTOMER PC
  */
 public class framePrincipal extends javax.swing.JFrame {
-
+    ArrayList<Usuario> usuarios = new ArrayList();
     /**
      * Creates new form framePrincipal
      */
@@ -271,24 +271,24 @@ public class framePrincipal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnLoginMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnLoginMouseClicked
-        String usuario = tfUsuario.getText();
-        String contraseña = new String(pwfPassword.getPassword());
-
-        if (usuario.isEmpty() || contraseña.isEmpty()) {
-            JOptionPane.showMessageDialog(this, "Por favor, ingresa usuario y contraseña");
-            return;
+        String usuario = "";
+        
+        boolean encontrado = false;
+        for (Usuario u : usuarios) {
+            if (tfUsuario.getText().equals(u.getUsuario()) && pwfPassword.getText().equals(u.getContraseña())) {
+            encontrado = true;
+            break;
+            }
         }
-
-        Usuario u = new Usuario(usuario, contraseña);
-
-        if (usuario.equals("enuila") && contraseña.equals("wynaut1325")) {
+    
+        if (tfUsuario.getText().equals("enuila") && pwfPassword.getText().equals("wynaut1325")) {
             jDialog1.pack();
             jDialog1.setModal(true);
             jDialog1.setLocationRelativeTo(this);
             jDialog1.setVisible(true);
             tfUsuario.setText("");
             pwfPassword.setText("");
-        } else {
+        } else if (encontrado) {
             jDialog1.pack();
             jDialog1.setModal(true);
             jDialog1.setLocationRelativeTo(this);
@@ -304,26 +304,28 @@ public class framePrincipal extends javax.swing.JFrame {
         jDialog2.setLocationRelativeTo(this);
         jDialog2.setVisible(true);
     }//GEN-LAST:event_jButton1MouseClicked
-    private ArrayList<Usuario> listaUsuarios = new ArrayList<>();
+    
+    
     private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
-        String usuario = tfUsuario.getText();
+        String usuario = tfUserRegistro.getText();
         String contraseña = new String(pwfRegistro.getPassword());
         String nombre = tfNombre.getText();
         int edad = Integer.parseInt(tfEdad.getText());
 
-        Usuario nuevoUsuario = new Usuario(usuario, contraseña, nombre, edad);
-        listaUsuarios.add(nuevoUsuario);
+        
 
         try {
             for (int i = 0; i < 5; i++) {
                 System.out.println("Sincronizando");
                 Thread.sleep(1000);
+                
             }
             jDialog2.dispose();
+            
         } catch (InterruptedException ex) {
             ex.printStackTrace();
         }
-
+        usuarios.add(new Usuario(usuario, contraseña, nombre, edad));
         JOptionPane.showMessageDialog(null, "Registrado exitosamente", "Registro Exitoso", JOptionPane.INFORMATION_MESSAGE);
 
     }//GEN-LAST:event_jButton2MouseClicked
