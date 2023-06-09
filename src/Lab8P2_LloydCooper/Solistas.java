@@ -1,13 +1,23 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package Lab8P2_LloydCooper;
 
-/**
- *
- * @author CUSTOMER PC
- */
-public class Solistas {
+import java.util.ArrayList;
+
+public class Solistas extends Artistas {
+    private ArrayList<String> listaCanciones;
+
+    public Solistas(String usuario, String contraseña, String nombre, int edad, String generoMusical) {
+        super(usuario, contraseña, nombre, edad, generoMusical);
+        this.listaCanciones = new ArrayList<>();
+    }
+
+    public ArrayList<String> getListaCanciones() {
+        return listaCanciones;
+    }
+
+    public void setListaCanciones(ArrayList<String> listaCanciones) {
+        this.listaCanciones = listaCanciones;
+    }
+
     
 }
+
