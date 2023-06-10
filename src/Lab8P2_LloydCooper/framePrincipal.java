@@ -7,6 +7,7 @@ import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -38,6 +39,7 @@ public class framePrincipal extends javax.swing.JFrame {
         btnDialogCrearEvt = new javax.swing.JButton();
         jLabel9 = new javax.swing.JLabel();
         btnDialogCrearArt = new javax.swing.JButton();
+        btnBitacora = new javax.swing.JButton();
         dialogRegistro = new javax.swing.JDialog();
         jPanel3 = new javax.swing.JPanel();
         tfUserRegistro = new javax.swing.JTextField();
@@ -97,6 +99,10 @@ public class framePrincipal extends javax.swing.JFrame {
         jLabel27 = new javax.swing.JLabel();
         pwfPasswordBanda = new javax.swing.JPasswordField();
         tfNombreBanda = new javax.swing.JTextField();
+        dialogBitacora = new javax.swing.JDialog();
+        jPanel8 = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -126,6 +132,13 @@ public class framePrincipal extends javax.swing.JFrame {
             }
         });
 
+        btnBitacora.setText("Bitacora");
+        btnBitacora.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnBitacoraMouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -138,7 +151,9 @@ public class framePrincipal extends javax.swing.JFrame {
                 .addGap(40, 40, 40)
                 .addComponent(btnDialogCrearEvt, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(40, 40, 40)
-                .addComponent(btnDialogCrearArt, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btnBitacora, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnDialogCrearArt, javax.swing.GroupLayout.DEFAULT_SIZE, 240, Short.MAX_VALUE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
@@ -148,9 +163,11 @@ public class framePrincipal extends javax.swing.JFrame {
                 .addComponent(jLabel9)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(btnDialogCrearArt, javax.swing.GroupLayout.DEFAULT_SIZE, 86, Short.MAX_VALUE)
-                    .addComponent(btnDialogCrearEvt, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(222, Short.MAX_VALUE))
+                    .addComponent(btnDialogCrearEvt, javax.swing.GroupLayout.DEFAULT_SIZE, 86, Short.MAX_VALUE)
+                    .addComponent(btnDialogCrearArt, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(btnBitacora, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(118, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout dialogAdminLayout = new javax.swing.GroupLayout(dialogAdmin.getContentPane());
@@ -625,6 +642,49 @@ public class framePrincipal extends javax.swing.JFrame {
             .addComponent(jPanel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
+        jPanel8.setBackground(new java.awt.Color(255, 255, 255));
+
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
+            },
+            new String [] {
+                "Accion", "Tiempo", "Persona"
+            }
+        ));
+        jScrollPane1.setViewportView(jTable1);
+
+        javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
+        jPanel8.setLayout(jPanel8Layout);
+        jPanel8Layout.setHorizontalGroup(
+            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel8Layout.createSequentialGroup()
+                .addGap(40, 40, 40)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 520, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(40, Short.MAX_VALUE))
+        );
+        jPanel8Layout.setVerticalGroup(
+            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel8Layout.createSequentialGroup()
+                .addGap(37, 37, 37)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 320, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(43, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout dialogBitacoraLayout = new javax.swing.GroupLayout(dialogBitacora.getContentPane());
+        dialogBitacora.getContentPane().setLayout(dialogBitacoraLayout);
+        dialogBitacoraLayout.setHorizontalGroup(
+            dialogBitacoraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        dialogBitacoraLayout.setVerticalGroup(
+            dialogBitacoraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
@@ -855,7 +915,21 @@ public class framePrincipal extends javax.swing.JFrame {
         dialogCrearSolista.setVisible(true);
     }//GEN-LAST:event_btnSolistaMouseClicked
     
+    private void btnBitacoraMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnBitacoraMouseClicked
+        dialogBitacora.setModal(true);
+    dialogBitacora.pack();
+    dialogBitacora.setLocationRelativeTo(this);
+    //dialogBitacora.agregarRegistrosTabla(bitacora.getRegistros()); // Pasar los registros a dialogBitacora
+    dialogBitacora.setVisible(true);
+        
+    }//GEN-LAST:event_btnBitacoraMouseClicked
     
+    public void agregarRegistrosTabla(ArrayList<String[]> registros) {
+    DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+    for (String[] registro : registros) {
+        model.addRow(registro);
+    }
+}
     
     /**
      * @param args the command line arguments
@@ -894,6 +968,7 @@ public class framePrincipal extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBanda;
+    private javax.swing.JButton btnBitacora;
     private javax.swing.JButton btnCrearBanda;
     private javax.swing.JButton btnCrearEvento;
     private javax.swing.JButton btnCrearSolista;
@@ -902,6 +977,7 @@ public class framePrincipal extends javax.swing.JFrame {
     private javax.swing.JButton btnLogin;
     private javax.swing.JButton btnSolista;
     private javax.swing.JDialog dialogAdmin;
+    private javax.swing.JDialog dialogBitacora;
     private javax.swing.JDialog dialogCrearArtista;
     private javax.swing.JDialog dialogCrearBanda;
     private javax.swing.JDialog dialogCrearEvento;
@@ -944,7 +1020,10 @@ public class framePrincipal extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
+    private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable jTable1;
     private javax.swing.JPasswordField pwfPassword;
     private javax.swing.JPasswordField pwfPasswordBanda;
     private javax.swing.JPasswordField pwfPasswordSolista;

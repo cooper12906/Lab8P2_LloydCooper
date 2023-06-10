@@ -36,7 +36,10 @@
                       <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
                       <Component id="btnDialogCrearEvt" min="-2" pref="240" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
-                      <Component id="btnDialogCrearArt" min="-2" pref="240" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="btnBitacora" max="32767" attributes="0"/>
+                          <Component id="btnDialogCrearArt" pref="240" max="32767" attributes="0"/>
+                      </Group>
                       <EmptySpace max="32767" attributes="0"/>
                   </Group>
               </Group>
@@ -48,10 +51,12 @@
                       <Component id="jLabel9" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="btnDialogCrearArt" pref="86" max="32767" attributes="0"/>
-                          <Component id="btnDialogCrearEvt" max="32767" attributes="0"/>
+                          <Component id="btnDialogCrearEvt" pref="86" max="32767" attributes="0"/>
+                          <Component id="btnDialogCrearArt" max="32767" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="222" max="32767" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="btnBitacora" min="-2" pref="86" max="-2" attributes="0"/>
+                      <EmptySpace pref="118" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -80,6 +85,14 @@
               </Properties>
               <Events>
                 <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btnDialogCrearArtMouseClicked"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JButton" name="btnBitacora">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Bitacora"/>
+              </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btnBitacoraMouseClicked"/>
               </Events>
             </Component>
           </SubComponents>
@@ -821,6 +834,92 @@
             </Component>
             <Component class="javax.swing.JTextField" name="tfNombreBanda">
             </Component>
+          </SubComponents>
+        </Container>
+      </SubComponents>
+    </Container>
+    <Container class="javax.swing.JDialog" name="dialogBitacora">
+
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Component id="jPanel8" alignment="0" max="32767" attributes="0"/>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Component id="jPanel8" alignment="0" max="32767" attributes="0"/>
+          </Group>
+        </DimensionLayout>
+      </Layout>
+      <SubComponents>
+        <Container class="javax.swing.JPanel" name="jPanel8">
+          <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="ff" red="ff" type="rgb"/>
+            </Property>
+          </Properties>
+
+          <Layout>
+            <DimensionLayout dim="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
+                      <Component id="jScrollPane1" min="-2" pref="520" max="-2" attributes="0"/>
+                      <EmptySpace pref="40" max="32767" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+            <DimensionLayout dim="1">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
+                      <Component id="jScrollPane1" min="-2" pref="320" max="-2" attributes="0"/>
+                      <EmptySpace pref="43" max="32767" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+          </Layout>
+          <SubComponents>
+            <Container class="javax.swing.JScrollPane" name="jScrollPane1">
+
+              <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+              <SubComponents>
+                <Component class="javax.swing.JTable" name="jTable1">
+                  <Properties>
+                    <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
+                      <Table columnCount="3" rowCount="4">
+                        <Column editable="true" title="Accion" type="java.lang.Object"/>
+                        <Column editable="true" title="Tiempo" type="java.lang.Object"/>
+                        <Column editable="true" title="Persona" type="java.lang.Object"/>
+                      </Table>
+                    </Property>
+                    <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
+                      <TableColumnModel selectionModel="0">
+                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                          <Title/>
+                          <Editor/>
+                          <Renderer/>
+                        </Column>
+                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                          <Title/>
+                          <Editor/>
+                          <Renderer/>
+                        </Column>
+                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                          <Title/>
+                          <Editor/>
+                          <Renderer/>
+                        </Column>
+                      </TableColumnModel>
+                    </Property>
+                    <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
+                      <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
+                    </Property>
+                  </Properties>
+                </Component>
+              </SubComponents>
+            </Container>
           </SubComponents>
         </Container>
       </SubComponents>
