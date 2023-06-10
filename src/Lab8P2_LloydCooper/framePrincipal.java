@@ -67,22 +67,36 @@ public class framePrincipal extends javax.swing.JFrame {
         dialogCrearArtista = new javax.swing.JDialog();
         jPanel6 = new javax.swing.JPanel();
         jLabel18 = new javax.swing.JLabel();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
+        btnSolista = new javax.swing.JButton();
+        btnBanda = new javax.swing.JButton();
         dialogCrearSolista = new javax.swing.JDialog();
         jPanel7 = new javax.swing.JPanel();
         jLabel15 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
-        tfUserArtista = new javax.swing.JTextField();
+        tfUserSolista = new javax.swing.JTextField();
         tfEdadSolista = new javax.swing.JTextField();
-        tfGeneroMusical = new javax.swing.JTextField();
+        tfGeneroMusicalSolista = new javax.swing.JTextField();
         jLabel19 = new javax.swing.JLabel();
-        jButton5 = new javax.swing.JButton();
+        btnCrearSolista = new javax.swing.JButton();
         jLabel20 = new javax.swing.JLabel();
         jLabel21 = new javax.swing.JLabel();
-        pwfPasswordArtista = new javax.swing.JPasswordField();
-        tfNombreArtista = new javax.swing.JTextField();
+        pwfPasswordSolista = new javax.swing.JPasswordField();
+        tfNombreSolista = new javax.swing.JTextField();
+        dialogCrearBanda = new javax.swing.JDialog();
+        jPanel9 = new javax.swing.JPanel();
+        jLabel22 = new javax.swing.JLabel();
+        jLabel23 = new javax.swing.JLabel();
+        jLabel24 = new javax.swing.JLabel();
+        tfUserBanda = new javax.swing.JTextField();
+        tfNumeroIntegrantes = new javax.swing.JTextField();
+        tfGeneroMusicalBanda = new javax.swing.JTextField();
+        jLabel25 = new javax.swing.JLabel();
+        btnCrearBanda = new javax.swing.JButton();
+        jLabel26 = new javax.swing.JLabel();
+        jLabel27 = new javax.swing.JLabel();
+        pwfPasswordBanda = new javax.swing.JPasswordField();
+        tfNombreBanda = new javax.swing.JTextField();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -355,9 +369,19 @@ public class framePrincipal extends javax.swing.JFrame {
         jLabel18.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel18.setText("Elija si desea crear un solista o una banda");
 
-        jButton3.setText("Solista");
+        btnSolista.setText("Solista");
+        btnSolista.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnSolistaMouseClicked(evt);
+            }
+        });
 
-        jButton4.setText("Banda");
+        btnBanda.setText("Banda");
+        btnBanda.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnBandaMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
@@ -369,9 +393,9 @@ public class framePrincipal extends javax.swing.JFrame {
                 .addGap(36, 36, 36))
             .addGroup(jPanel6Layout.createSequentialGroup()
                 .addGap(63, 63, 63)
-                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnSolista, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(34, 34, 34)
-                .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnBanda, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel6Layout.setVerticalGroup(
@@ -381,8 +405,8 @@ public class framePrincipal extends javax.swing.JFrame {
                 .addComponent(jLabel18)
                 .addGap(45, 45, 45)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, 80, Short.MAX_VALUE)
-                    .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(btnSolista, javax.swing.GroupLayout.DEFAULT_SIZE, 80, Short.MAX_VALUE)
+                    .addComponent(btnBanda, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(216, Short.MAX_VALUE))
         );
 
@@ -409,10 +433,10 @@ public class framePrincipal extends javax.swing.JFrame {
         jLabel19.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel19.setText("Crear solista");
 
-        jButton5.setText("Crear solista");
-        jButton5.addMouseListener(new java.awt.event.MouseAdapter() {
+        btnCrearSolista.setText("Crear solista");
+        btnCrearSolista.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton5MouseClicked(evt);
+                btnCrearSolistaMouseClicked(evt);
             }
         });
 
@@ -432,22 +456,22 @@ public class framePrincipal extends javax.swing.JFrame {
                 .addContainerGap(117, Short.MAX_VALUE)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
-                        .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnCrearSolista, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(33, 33, 33))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
                         .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(jPanel7Layout.createSequentialGroup()
                                 .addComponent(jLabel17)
                                 .addGap(43, 43, 43)
-                                .addComponent(tfGeneroMusical, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(tfGeneroMusicalSolista, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
                                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel15)
                                     .addComponent(jLabel20))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(tfUserArtista)
-                                    .addComponent(pwfPasswordArtista, javax.swing.GroupLayout.DEFAULT_SIZE, 240, Short.MAX_VALUE)))
+                                    .addComponent(tfUserSolista)
+                                    .addComponent(pwfPasswordSolista, javax.swing.GroupLayout.DEFAULT_SIZE, 240, Short.MAX_VALUE)))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
                                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel16)
@@ -455,7 +479,7 @@ public class framePrincipal extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(tfEdadSolista, javax.swing.GroupLayout.DEFAULT_SIZE, 240, Short.MAX_VALUE)
-                                    .addComponent(tfNombreArtista))))
+                                    .addComponent(tfNombreSolista))))
                         .addGap(118, 118, 118))))
         );
         jPanel7Layout.setVerticalGroup(
@@ -466,14 +490,14 @@ public class framePrincipal extends javax.swing.JFrame {
                 .addGap(39, 39, 39)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel15)
-                    .addComponent(tfUserArtista, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(tfUserSolista, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel20)
-                    .addComponent(pwfPasswordArtista, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(pwfPasswordSolista, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(tfNombreArtista, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tfNombreSolista, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel21))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -481,10 +505,10 @@ public class framePrincipal extends javax.swing.JFrame {
                     .addComponent(jLabel16))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(tfGeneroMusical, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tfGeneroMusicalSolista, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel17))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 52, Short.MAX_VALUE)
-                .addComponent(jButton5)
+                .addComponent(btnCrearSolista)
                 .addGap(27, 27, 27))
         );
 
@@ -497,6 +521,108 @@ public class framePrincipal extends javax.swing.JFrame {
         dialogCrearSolistaLayout.setVerticalGroup(
             dialogCrearSolistaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
+        jPanel9.setBackground(new java.awt.Color(255, 255, 255));
+
+        jLabel22.setText("Usuario");
+
+        jLabel23.setText("Numero de integrantes");
+
+        jLabel24.setText("Genero musical");
+
+        jLabel25.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
+        jLabel25.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel25.setText("Crear solista");
+
+        btnCrearBanda.setText("Crear banda");
+        btnCrearBanda.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnCrearBandaMouseClicked(evt);
+            }
+        });
+
+        jLabel26.setText("Contrasena");
+
+        jLabel27.setText("Nombre");
+
+        javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
+        jPanel9.setLayout(jPanel9Layout);
+        jPanel9Layout.setHorizontalGroup(
+            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel9Layout.createSequentialGroup()
+                .addGap(180, 180, 180)
+                .addComponent(jLabel25, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(180, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel9Layout.createSequentialGroup()
+                .addContainerGap(114, Short.MAX_VALUE)
+                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel9Layout.createSequentialGroup()
+                        .addComponent(btnCrearBanda, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(33, 33, 33))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel9Layout.createSequentialGroup()
+                        .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(jPanel9Layout.createSequentialGroup()
+                                .addComponent(jLabel24)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(tfGeneroMusicalBanda, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel9Layout.createSequentialGroup()
+                                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel22)
+                                    .addComponent(jLabel26))
+                                .addGap(65, 68, Short.MAX_VALUE)
+                                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(tfUserBanda)
+                                    .addComponent(pwfPasswordBanda, javax.swing.GroupLayout.DEFAULT_SIZE, 240, Short.MAX_VALUE)))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel9Layout.createSequentialGroup()
+                                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel23)
+                                    .addComponent(jLabel27))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(tfNumeroIntegrantes, javax.swing.GroupLayout.DEFAULT_SIZE, 240, Short.MAX_VALUE)
+                                    .addComponent(tfNombreBanda))))
+                        .addGap(118, 118, 118))))
+        );
+        jPanel9Layout.setVerticalGroup(
+            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel9Layout.createSequentialGroup()
+                .addGap(29, 29, 29)
+                .addComponent(jLabel25)
+                .addGap(39, 39, 39)
+                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel22)
+                    .addComponent(tfUserBanda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel26)
+                    .addComponent(pwfPasswordBanda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(tfNombreBanda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel27))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(tfNumeroIntegrantes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel23))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(tfGeneroMusicalBanda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel24))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 52, Short.MAX_VALUE)
+                .addComponent(btnCrearBanda)
+                .addGap(27, 27, 27))
+        );
+
+        javax.swing.GroupLayout dialogCrearBandaLayout = new javax.swing.GroupLayout(dialogCrearBanda.getContentPane());
+        dialogCrearBanda.getContentPane().setLayout(dialogCrearBandaLayout);
+        dialogCrearBandaLayout.setHorizontalGroup(
+            dialogCrearBandaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        dialogCrearBandaLayout.setVerticalGroup(
+            dialogCrearBandaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -680,21 +806,54 @@ public class framePrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_btnCrearEventoMouseClicked
 
     private void btnDialogCrearArtMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnDialogCrearArtMouseClicked
-        
+        dialogCrearArtista.pack();
+        dialogCrearArtista.setModal(true);
+        dialogCrearArtista.setLocationRelativeTo(this);
+        dialogCrearArtista.setVisible(true);
     }//GEN-LAST:event_btnDialogCrearArtMouseClicked
 
-    private void jButton5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton5MouseClicked
-        String user = tfUserArtista.getText();
-        String password = new String(pwfPasswordArtista.getPassword());
-        String nombre = tfNombreArtista.getText();
+    private void btnCrearSolistaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCrearSolistaMouseClicked
+        String user = tfUserSolista.getText();
+        String password = new String(pwfPasswordSolista.getPassword());
+        String nombre = tfNombreSolista.getText();
         int edad = Integer.parseInt(tfEdad.getText());
-        String generoMusical = tfGeneroMusical.getText();
+        String generoMusical = tfGeneroMusicalSolista.getText();
         dialogCrearSolista.dispose();
 
-        artistas.add(new Artistas(user, password, nombre, edad, generoMusical));
+        artistas.add(new Solistas(user, nombre, nombre, edad, generoMusical));
+        JOptionPane.showMessageDialog(null, "Artista creado exitosamente", "Artista creado exitosamente", JOptionPane.INFORMATION_MESSAGE);  
+    }//GEN-LAST:event_btnCrearSolistaMouseClicked
+
+    private void btnCrearBandaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCrearBandaMouseClicked
+        String user = tfUserBanda.getText();
+        String password = new String(pwfPasswordBanda.getPassword());
+        String nombre = tfNombreBanda.getText();
+        int edad = 0;
+        String generoMusical = tfGeneroMusicalBanda.getText();
+        int numeroIntegrantes = Integer.parseInt(tfNumeroIntegrantes.getText());
+
+        dialogCrearBanda.dispose();
+
+        Bandas banda = new Bandas(user, nombre, nombre, edad, generoMusical, numeroIntegrantes);
+        artistas.add(banda);
+
         JOptionPane.showMessageDialog(null, "Artista creado exitosamente", "Artista creado exitosamente", JOptionPane.INFORMATION_MESSAGE);
-       
-    }//GEN-LAST:event_jButton5MouseClicked
+    }//GEN-LAST:event_btnCrearBandaMouseClicked
+
+    private void btnBandaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnBandaMouseClicked
+        dialogCrearBanda.pack();
+        dialogCrearBanda.setModal(true);
+        dialogCrearBanda.setLocationRelativeTo(this);
+        dialogCrearBanda.setVisible(true);
+        dialogCrearArtista.dispose();
+    }//GEN-LAST:event_btnBandaMouseClicked
+
+    private void btnSolistaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSolistaMouseClicked
+        dialogCrearSolista.pack();
+        dialogCrearSolista.setModal(true);
+        dialogCrearSolista.setLocationRelativeTo(this);
+        dialogCrearSolista.setVisible(true);
+    }//GEN-LAST:event_btnSolistaMouseClicked
     
     
     
@@ -734,21 +893,23 @@ public class framePrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnBanda;
+    private javax.swing.JButton btnCrearBanda;
     private javax.swing.JButton btnCrearEvento;
+    private javax.swing.JButton btnCrearSolista;
     private javax.swing.JButton btnDialogCrearArt;
     private javax.swing.JButton btnDialogCrearEvt;
     private javax.swing.JButton btnLogin;
+    private javax.swing.JButton btnSolista;
     private javax.swing.JDialog dialogAdmin;
     private javax.swing.JDialog dialogCrearArtista;
+    private javax.swing.JDialog dialogCrearBanda;
     private javax.swing.JDialog dialogCrearEvento;
     private javax.swing.JDialog dialogCrearSolista;
     private javax.swing.JDialog dialogRegistro;
     private javax.swing.JDialog dialogUser;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -763,6 +924,12 @@ public class framePrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel25;
+    private javax.swing.JLabel jLabel26;
+    private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -777,20 +944,26 @@ public class framePrincipal extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
+    private javax.swing.JPanel jPanel9;
     private javax.swing.JPasswordField pwfPassword;
-    private javax.swing.JPasswordField pwfPasswordArtista;
+    private javax.swing.JPasswordField pwfPasswordBanda;
+    private javax.swing.JPasswordField pwfPasswordSolista;
     private javax.swing.JPasswordField pwfRegistro;
     private javax.swing.JTextField tfCapacidadP;
     private javax.swing.JTextField tfCiudad;
     private javax.swing.JTextField tfEdad;
     private javax.swing.JTextField tfEdadSolista;
     private javax.swing.JTextField tfFecha;
-    private javax.swing.JTextField tfGeneroMusical;
+    private javax.swing.JTextField tfGeneroMusicalBanda;
+    private javax.swing.JTextField tfGeneroMusicalSolista;
     private javax.swing.JTextField tfLugar;
     private javax.swing.JTextField tfNombre;
-    private javax.swing.JTextField tfNombreArtista;
-    private javax.swing.JTextField tfUserArtista;
+    private javax.swing.JTextField tfNombreBanda;
+    private javax.swing.JTextField tfNombreSolista;
+    private javax.swing.JTextField tfNumeroIntegrantes;
+    private javax.swing.JTextField tfUserBanda;
     private javax.swing.JTextField tfUserRegistro;
+    private javax.swing.JTextField tfUserSolista;
     private javax.swing.JTextField tfUsuario;
     // End of variables declaration//GEN-END:variables
 }
