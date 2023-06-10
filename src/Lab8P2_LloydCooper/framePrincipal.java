@@ -873,15 +873,16 @@ public class framePrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_btnDialogCrearArtMouseClicked
 
     private void btnCrearSolistaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCrearSolistaMouseClicked
-        String user = tfUserSolista.getText();
-        String password = new String(pwfPasswordSolista.getPassword());
-        String nombre = tfNombreSolista.getText();
-        int edad = Integer.parseInt(tfEdad.getText());
-        String generoMusical = tfGeneroMusicalSolista.getText();
-        dialogCrearSolista.dispose();
-
-        artistas.add(new Solistas(user, password, nombre, edad, generoMusical));
-        JOptionPane.showMessageDialog(null, "Artista creado exitosamente", "Artista creado exitosamente", JOptionPane.INFORMATION_MESSAGE);  
+     String user = tfUserSolista.getText();
+    String password = new String(pwfPasswordSolista.getPassword());
+    String nombre = tfNombreSolista.getText();
+    int edad = Integer.parseInt(tfEdadSolista.getText());
+    String generoMusical = tfGeneroMusicalSolista.getText();
+    
+    dialogCrearSolista.dispose();
+    
+    artistas.add(new Solistas(user, password, nombre, edad, generoMusical));
+    JOptionPane.showMessageDialog(null, "Artista creado exitosamente", "Artista creado exitosamente", JOptionPane.INFORMATION_MESSAGE); 
     }//GEN-LAST:event_btnCrearSolistaMouseClicked
 
     private void btnCrearBandaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCrearBandaMouseClicked
