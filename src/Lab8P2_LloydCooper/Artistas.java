@@ -70,7 +70,13 @@ public class Artistas implements Serializable {
 
     @Override
     public String toString() {
-        return "Artistas{" + "usuario=" + usuario + ", contrasena=" + contraseña + ", nombre=" + nombre + ", edad=" + edad + ", generoMusical=" + generoMusical + ", canciones=" + canciones + '}';
+        return "Artistas:" + 
+                "usuario:" + usuario + 
+                ", contrasena=" + contraseña + 
+                ", nombre=" + nombre + 
+                ", edad=" + edad + 
+                ", generoMusical=" + generoMusical + 
+                ", canciones=" + canciones;
     }
 
     public void agregarCancion(Cancion cancion) {

@@ -1,26 +1,27 @@
 package Lab8P2_LloydCooper;
 
 import java.io.Serializable;
+import java.util.Date;
 
 
 public class Evento implements Serializable {
-    private String fecha;
+    private Date fecha;
     private String ciudad;
     private String lugar;
     private int capacidadPersonas;
 
-    public Evento(String fecha, String ciudad, String lugar, int capacidadPersonas) {
+    public Evento(Date fecha, String ciudad, String lugar, int capacidadPersonas) {
         this.fecha = fecha;
         this.ciudad = ciudad;
         this.lugar = lugar;
         this.capacidadPersonas = capacidadPersonas;
     }
 
-    public String getFecha() {
+    public Date getFecha() {
         return fecha;
     }
 
-    public void setFecha(String fecha) {
+    public void setFecha(Date fecha) {
         this.fecha = fecha;
     }
 
@@ -48,6 +49,13 @@ public class Evento implements Serializable {
         this.capacidadPersonas = capacidadPersonas;
     }
 
-    
+    @Override
+    public String toString() {
+        return "Evento:" 
+                + "fecha=" + fecha + 
+                ", ciudad=" + ciudad + 
+                ", lugar=" + lugar + 
+                ", capacidadPersonas=" + capacidadPersonas;
+    }
 }
 
