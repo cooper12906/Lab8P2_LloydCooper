@@ -880,7 +880,7 @@ public class framePrincipal extends javax.swing.JFrame {
         String generoMusical = tfGeneroMusicalSolista.getText();
         dialogCrearSolista.dispose();
 
-        artistas.add(new Solistas(user, nombre, nombre, edad, generoMusical));
+        artistas.add(new Solistas(user, password, nombre, edad, generoMusical));
         JOptionPane.showMessageDialog(null, "Artista creado exitosamente", "Artista creado exitosamente", JOptionPane.INFORMATION_MESSAGE);  
     }//GEN-LAST:event_btnCrearSolistaMouseClicked
 
@@ -894,7 +894,7 @@ public class framePrincipal extends javax.swing.JFrame {
 
         dialogCrearBanda.dispose();
 
-        Bandas banda = new Bandas(user, nombre, nombre, edad, generoMusical, numeroIntegrantes);
+        Bandas banda = new Bandas(user, password, nombre, edad, generoMusical, numeroIntegrantes);
         artistas.add(banda);
 
         JOptionPane.showMessageDialog(null, "Artista creado exitosamente", "Artista creado exitosamente", JOptionPane.INFORMATION_MESSAGE);
@@ -921,7 +921,9 @@ public class framePrincipal extends javax.swing.JFrame {
     dialogBitacora.setLocationRelativeTo(this);
     //dialogBitacora.agregarRegistrosTabla(bitacora.getRegistros()); // Pasar los registros a dialogBitacora
     dialogBitacora.setVisible(true);
-        
+        Bitacora bitacora = new Bitacora(this);
+Thread bitacoraThread = new Thread(bitacora);
+bitacoraThread.start();
     }//GEN-LAST:event_btnBitacoraMouseClicked
     
     public void agregarRegistrosTabla(ArrayList<String[]> registros) {

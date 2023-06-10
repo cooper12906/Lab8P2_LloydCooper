@@ -29,35 +29,33 @@ public class Bitacora extends Thread implements Serializable {
      
 
     public void guardarBitacoraEnArchivoBinario() {
-        String directorioProyecto = System.getProperty("user.dir");
-        String rutaBitacora = directorioProyecto + "/src/bitacora.dat";
-        File archivoBitacora = new File(rutaBitacora);
-        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(archivoBitacora))) {
-            oos.writeObject(this);
-            oos.close();
-        } catch (IOException ex) {
-            ex.printStackTrace();
-        }
+    String rutaBitacora = Bitacora.class.getResource("bitacora.dat").getPath();
+    File archivoBitacora = new File(rutaBitacora);
+    try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(archivoBitacora))) {
+        oos.writeObject(this);
+        oos.close();
+    } catch (IOException ex) {
+        ex.printStackTrace();
     }
+}
 
-    public static Bitacora cargarBitacoraDesdeArchivoBinario() {
-        String directorioProyecto = System.getProperty("user.dir");
-        String rutaBitacora = directorioProyecto + "/src/bitacora.dat";
-        File archivoBitacora = new File(rutaBitacora);
-        try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(archivoBitacora))) {
-            Bitacora bitacora = (Bitacora) ois.readObject();
-            ois.close();
-            return bitacora;
-        } catch (IOException | ClassNotFoundException ex) {
-            ex.printStackTrace();
-        }
-        return null;
+public static Bitacora cargarBitacoraDesdeArchivoBinario() {
+    String rutaBitacora = Bitacora.class.getResource("bitacora.dat").getPath();
+    File archivoBitacora = new File(rutaBitacora);
+    try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(archivoBitacora))) {
+        Bitacora bitacora = (Bitacora) ois.readObject();
+        ois.close();
+        return bitacora;
+    } catch (IOException | ClassNotFoundException ex) {
+        ex.printStackTrace();
     }
+    return null;
+}
 
     @Override
     public void run() {
         while (true) {
-            // Realizar tareas de la bitácora
+            
 
             try {
                 Thread.sleep(2000);
